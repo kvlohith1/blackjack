@@ -1,15 +1,17 @@
 import random
+from deck import Deck
 
 
 class Player:
 
     def __init__(self):
-        self.deck = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
         self.cards = []
         self.score = 0
 
     def deal(self):
-        self.cards.append(random.choice(self.deck))
+        picked_card = random.choice(Deck.cards)
+        self.cards.append(picked_card)
+        Deck.cards.remove(picked_card)
 
     def calculate_score(self):
         if sum(self.cards) == 0 and len(self.cards) == 2:
