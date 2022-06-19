@@ -21,7 +21,7 @@ class Player:
         else:
             self.score = sum(self.cards)
 
-    def compare_scores(self, opponent):
+    def compare_score_to(self, opponent):
         if self.score > 21 and opponent.score > 21:
             print('You went over, you lose.')
         elif opponent.score > 21:

@@ -26,7 +26,7 @@ def play_game():
         computer.deal()
         computer.calculate_score()
     print(f'Computer cards: {computer.cards}, computer score: {computer.score}')
-    user.compare_scores(computer)
+    user.compare_score_to(computer)
 
 
 begin_choice = 'y'
