@@ -12,6 +12,7 @@ class Player:
         picked_card = random.choice(Deck.cards)
         self.cards.append(picked_card)
         Deck.cards.remove(picked_card)
+        Deck.picked_cards.append(picked_card)
 
     def calculate_score(self):
         if sum(self.cards) == 0 and len(self.cards) == 2:

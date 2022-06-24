@@ -1,10 +1,8 @@
 from player import Player
-
-user = Player()
-computer = Player()
+from deck import Deck
 
 
-def play_game():
+def play_game(user, computer):
     is_game_over = 'n'
     for i in range(2):
         user.deal()
@@ -33,4 +31,8 @@ begin_choice = 'y'
 while begin_choice == 'y':
     begin_choice = input("Do you want to play a game of Blackjack? Type 'y' or 'n': ")
     if begin_choice == 'y':
-        play_game()
+        deck = Deck()
+        deck.reset_deck()
+        user_player = Player()
+        computer_player = Player()
+        play_game(user_player, computer_player)
